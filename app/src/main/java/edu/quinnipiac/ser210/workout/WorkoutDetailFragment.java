@@ -22,6 +22,18 @@ public class WorkoutDetailFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        if(savedInstanceState!=null){
+            workoutId = savedInstanceState.getLong("workoutId");
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        savedInstanceState.putLong("workoutId", workoutId);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
